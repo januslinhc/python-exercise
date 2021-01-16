@@ -15,12 +15,6 @@ class Frac(object):
         self.denominator = self.denominator / x
         return self
 
-    def get_numerator(self):
-        return self.numerator
-
-    def get_denominator(self):
-        return self.denominator
-
     def minus(self, another_frac):
         return self.__sub__(another_frac)
 
@@ -39,15 +33,11 @@ class Frac(object):
                 return Frac(self.numerator * other.denominator -
                             other.numerator * self.denominator,
                             self.denominator * other.denominator).simplify()
-        else:
-            raise ValueError("Frac type required.")
 
     def __truediv__(self, other):
         if isinstance(other, Frac):
             return Frac(self.numerator * other.denominator,
                         self.denominator * other.numerator).simplify()
-        else:
-            raise ValueError("Frac type required.")
 
 
 def get_value_from_input():
